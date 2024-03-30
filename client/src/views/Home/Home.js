@@ -25,6 +25,7 @@ function Home() {
   useEffect(()=>{
     loadNotes();
   },[])
+  
   return (
     <div className='card card-body '>
       {
