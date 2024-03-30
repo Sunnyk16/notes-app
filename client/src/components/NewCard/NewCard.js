@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import deli from "./delete (1).png"
+import updi from "./feather-pen.png"
 import axios from "axios";
+import UpdateNote from "../../views/updateNote/UpdateNote";
 
 function NewCard(note) {
     const {_id ,title ,content,category, loadNotes}=note;
@@ -21,8 +24,10 @@ function NewCard(note) {
         </div>
         
         <p>{note.content}</p>
-        <div className="h-6 w-6 ml-auto" onClick={deleteNote}>
-            <img src={deli}></img>
+        <div className="flex  justify-end">
+            <img src={deli} className="h-6 w-6 m-1" onClick={deleteNote}></img>
+
+            <Link to={`/update/${_id}`}><img src={updi} className="h-6 w-6 m-1" onClick={UpdateNote}></img></Link>
         </div>
         
       </div>
